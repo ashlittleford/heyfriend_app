@@ -1,0 +1,37 @@
+
+----- MAIN APP FUNCTION -----
+
+> welcome screens
+
+> personal data inputs (name, age, gender)*
+
+> personal history inputs (previous experience, diagnosis')*
+
+> explanation screens
+
+> questions (6-10, each with 3 button options + not sure)
+	depending on selection, therapy skill category is giving number of points
+		example (A: distress tolerence+6, interpesonal effectiveness-2, emotional regulation+4, B: distress tolerence+2, interpesonal effectiveness+2, emotional regulation+8)
+	depending on selection, personal histroy inputs, or generic formula, another quesiton is asked
+
+> points are accumlumated and compared to TOOLS DATA for best-fit reccomendation, based on weighting of therapy skill needed
+
+> 1 Tool is recommended, with 2 back-ups
+
+
+______*only for intial start-up
+
+
+---- OTHER MAIN FEATURES -----
+
+- 'Not Sure' will give 2 points to each category
+- A function 'I have answered enough questions' to exit early, with a warning that results may vary
+- A function 'I want to start over'
+- A function 'I want to explore'
+- 
+ 
+
+
+
+
+

@@ -17,7 +17,6 @@ df = pandas.read_csv(tools_csv_file,
                      names=["Name", "Skill", "Therapy", "Associated Feelings/Emotions", "Associated Behaviours"])
 
 
-
 ############ OUTPUTS ############
 
 class Data():

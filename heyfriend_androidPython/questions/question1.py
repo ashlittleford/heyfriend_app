@@ -9,6 +9,8 @@ q2_b = 'great'
 q3_c = 'not bad'
 
 
+user_answer = input(f"{question}\n{', '.join(answers)}\nYour answer: ").lower()
+
 answer = input(f"{question1}\n{', '.join([f'{chr(65+i)}) {answer}' for i, answer in enumerate(answers)])}\nEnter your choice (A, B, C, or N): ").upper()
 if answer in ['A', 'B', 'C', 'N']:
     print("Invalid choice. Please choose A, B, C, or N.")

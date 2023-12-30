@@ -4,7 +4,7 @@ from tryAgain import *
 
 #################################
 
-class Tool(Data):
+class Tool():
     def __init__(self, tool):
         self.__tool = tool
         self.__assoc = []
