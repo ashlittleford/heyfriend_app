@@ -1,0 +1,13 @@
+<text3Screen>:
+    BoxLayout:
+        orientation: "vertical"
+
+        Button:
+            text: 'So lets get started...'
+
+        Button:
+            text: 'Back'
+            on_press:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'text2Screen'
+

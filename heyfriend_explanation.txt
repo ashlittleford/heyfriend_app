@@ -29,9 +29,14 @@ ______*only for intial start-up
 - A function 'I want to start over'
 - A function 'I want to explore'
 - 
- 
 
 
+----- HOW DOES IT WORK -----
+
+- Every tool has a plot
+- Questions produce histogram, convert to dotplot
+	> produce line of best fit
+	> compare to database
 
 
 

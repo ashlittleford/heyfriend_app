@@ -6,7 +6,7 @@ from pprint import pp
 
 ############ DEFINING PARAMETERS ############
 
-tools_csv_file   =    './toolsCSV.csv'
+tools_csv_file   =    './toolsWeighted.csv'
 
 ################ REWRITE DATA TO NEW DICTIONARY ################
 
@@ -15,9 +15,9 @@ toolsList = []
 df = pandas.read_csv(tools_csv_file,
                      index_col="Name",
                      header=0,
-                     names=["Name", "Skill", "Therapy", "Associated Feelings/Emotions", "Associated Behaviours"])
+                     names=["Name", "Therapy", "Mindfulness", "DistressTolerance", "EmotionalRegulation", "InterpersonalEffectiveness"])
 
-#names=["Name", "Therapy", "Mindfulness", "DistressTolerance", "EmotionalRegulation", "InterpersonalEffectiveness"])
+
 ################ OBJECTS ################
 
 class Tool():
