@@ -1,38 +1,42 @@
-############ IMPORT MODULES ############
 
 import csv
-import pandas
+import numpy as np
+import pandas as pd
 
-############ DEFINING PARAMETERS ############
-
-tools_csv_file   =    './toolsCSV.csv'
-
-############ READING FILE ############
-
-toolsList = []
-
-df = pandas.read_csv(tools_csv_file,
-                     index_col="Name",
-                     header=0,
-                     names=["Name", "Skill", "Therapy", "Associated Feelings/Emotions", "Associated Behaviours"])
-
-
-############ OUTPUTS ############
 
 class Data():
     def __init__(self):
-        pass
+        self.__toolsCSV   =    'heyfriend_assests\\dataTest.csv'
 
-    def name_df(self):
-       pass
+    # reads all data from csv
+    #@classmethod
+    def readData(self):
+        df = pd.read_csv(self.__toolsCSV)
+        df.columns = ['name','therapy','cat1','cat2','cat3','cat4','cat5','cat6','cat7']
+        df['name'] = pd.Series(df['name'], dtype="string")
+        df['therapy'] = pd.Series(df['therapy'], dtype="string")
+        return df
+    
+    # prints data in from read method
+    def printData(self):
+        df = self.readData()
+        toolsList = df["name"]
+        print(df.dtypes, df.head(), toolsList)
 
-    def skill_df(self):
-        df.loc["Skill"]
+    # creates dataframe with only name and gradings
+    def getGradings(self):
+        df = self.readData()
+        edited = df.drop(['therapy', 'name'], axis=1)
+        return edited
+    
+    # prints gradings
+    def printGradings(self):
+        edited = self.getGradings()
+        print(edited)
 
-        return df.get("Skill")
-
-    def therapy_df(self):
-        return df.get("Therapy")
 
 
 
+objectD = Data()
+objectD.printData()
+objectD.printGradings()

@@ -38,5 +38,5 @@ ______*only for intial start-up
 	> produce line of best fit
 	> compare to database
 
-
+https://numbergenerator.org/randomnumbergenerator/5-numbers/sum-to/100#!numbers=7&low=1&high=100&unique=true&csv=&oddeven=&oddqty=0&sorted=false&addfilters=sum_of_numbers-val-100
 
