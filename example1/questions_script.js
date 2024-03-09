@@ -5,27 +5,18 @@ const questions = [
     question: "What is the capital of France?",
     options: ["a) London", "b) Paris", "c) Berlin"],
     next: {
-      "a": 2, // Index of next question if "a" is chosen
-      "b": 1, // Index of next question if "b" is chosen
-      "c": 2 // Index of next question if "c" is chosen
+      "a": 1, // Index of next question if "a" is chosen
+      "b": 2, // Index of next question if "b" is chosen
+      "c": 1 // Index of next question if "c" is chosen (wrong answer leads back to Q1)
     }
   },
   {
     question: "What is the tallest mountain in the world?",
     options: ["a) Mount Everest", "b) K2", "c) Mount Kilimanjaro"],
     next: {
-      "a": 3, // End quiz if "a" is chosen (winner)
-      "b": 2, // Show question 2 if "b" is chosen
-      "c": 2 // Show question 2 if "c" is chosen
-    }
-  },
-  {
-    question: "You've almost finished!  What is 2 + 2?",
-    options: ["a) 3", "b) 4", "c) 5"],
-    next: {
-      "a": 2, // Show question 2 again if "a" is chosen (wrong)
-      "b": 3, // End quiz if "b" is chosen (winner)
-      "c": 2 // Show question 2 again if "c" is chosen (wrong)
+      "a": "win", // End quiz with win message if "a" is chosen
+      "b": 1, // Show question 1 again if "b" is chosen (wrong)
+      "c": 1 // Show question 1 again if "c" is chosen (wrong)
     }
   }
 ];
@@ -35,7 +26,7 @@ let currentQuestion = 0;
 function showQuestion() {
   const question = questions[currentQuestion];
   questionEl.textContent = question.question;
-  questionEl.style.opacity = 1; // Reset opacity for fadeIn animation
+  questionEl.style.opacity = 1; // Reset opacity for fadeIn animation (if implemented in CSS)
 
   optionsEl.innerHTML = ""; // Clear existing options
   question.options.forEach(option => {
@@ -48,4 +39,17 @@ function showQuestion() {
 }
 
 function handleAnswer(event) {
-  const answer = event.
+  const answer = event.target.dataset.answer;
+  const next = questions[currentQuestion].next[answer];
+
+  if (next === "win") {
+    // Display win message (code for displaying message omitted)
+  } else if (typeof next === "number") {
+    currentQuestion = next;
+    showQuestion();
+  } else {
+    // Handle other outcomes (e.g., game over)
+  }
+}
+
+showQuestion(); // Start the quiz
