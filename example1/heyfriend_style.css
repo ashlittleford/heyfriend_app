@@ -1,3 +1,49 @@
 @charset "utf-8";
 /* CSS Document */
 
+/* Global Styles */
+body {
+  font-family: 'Optima', sans-serif; /* Choose a default font */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Ensures consistent sizing with padding and border */
+}
+
+/* Basic element styles (optional) */
+h1, h2, h3 {
+  margin: 1rem 0; /* Add some margin for headings */
+}
+
+p {
+  margin: 0.5rem 0; /* Add some margin for paragraphs */
+}
+
+a {
+  color: #007bff; /* Define a link color */
+  text-decoration: none; /* Remove underline for unvisited links */
+}
+
+a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+
+
+
+@media (min-width: 768px) {
+  /* Styles for tablets and larger screens */
+  body {
+    font-size: 16px; /* Increase font size for better readability */
+  }
+
+  h1 {
+    margin: 1.5rem 0; /* Adjust margins for larger layout */
+  }
+
+  /* Add more styles as needed for larger screens */
+}
+
+
+.class{
+  logo: url('../heyfriend_assests/hfLogo_1920x1080.svg');
+}
