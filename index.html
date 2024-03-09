@@ -3,14 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hey Friend</title>
-  <link rel="stylesheet" href="file:///G|/My Drive/therapy app/example1/heyfriend_style.css">
-	<style>
-		@import url('https://fonts.cdnfonts.com/css/optima');
-	</style>
+  <title>App Splash Screen</title>
+  <style>
+    body {
+      font-family: 'Optima';
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+      background-color: #f5f5f5; /* Light gray background */
+    }
+
+    .container {
+      flex: 1; /* Take up all remaining space */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      width: 200px; /* Adjust width as needed */
+      height: 200px; /* Adjust height as needed */
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.8rem; /* Adjust font size as needed */
+      color: #aaa;
+    }
+
+    @media (min-width: 768px) { /* Adjust breakpoint as needed for tablets */
+      .logo {
+        width: 300px;
+        height: 300px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1></h1>
-  <script src="file:///G|/My Drive/therapy app/example1/scripts.js"></script>
+  <div class="container">
+    <img src="heyfriend_assests/hfLogo_1920x1080.svg" alt="App Logo" class="logo" id="logo">
+  </div>
+	  <script>
+		const logo = document.getElementById('logo');
+
+		window.onload = function() {
+		  fadeIn(logo, 2000); // Fade in with duration of 2 seconds (adjust as needed)
+		};
+
+		function fadeIn(element, duration) {
+		  let opacity = 0;
+		  let intervalId = setInterval(function() {
+			opacity += 0.05; // Adjust increment for smoother transition
+			element.style.opacity = opacity;
+
+			if (opacity >= 1) {
+			  clearInterval(intervalId);
+			  fadeOut(element, 2000); // Fade out after 3 seconds (adjust as needed)
+			}
+		  }, 200); // Adjust interval for animation speed (lower for faster)
+		}
+
+	//	function fadeOut(element, duration) {
+	//	  let opacity = 1;
+	//	  let intervalId = setInterval(function() {
+	//		opacity -= 0.05; // Adjust decrement for smoother transition
+	//		element.style.opacity = opacity;
+//
+	//		if (opacity <= 0) {
+		//	  clearInterval(intervalId);
+			//}
+		//  }, 200); // Adjust interval for animation speed (lower for faster)
+	//	}
+	  </script>
+	
+	  <script> // redirects to questions
+    		window.onload = function() {
+      			setTimeout(function() {
+        		window.location.href = "example1/questions.html";
+      				}, 6000); // Redirect after 2 seconds (adjust as needed)
+    			};
+ 			</script>
+	
+	
+  <footer class="footer">
+    &copy; 2024 Ashlee Littleford & Darcy Pullman
+  </footer>
 </body>
 </html>
