@@ -7,6 +7,10 @@ body {
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
   box-sizing: border-box; /* Ensures consistent sizing with padding and border */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5; /* Light gray background */
 }
 
 /* Basic element styles (optional) */
@@ -48,3 +52,36 @@ a:hover {
   logo: url('../heyfriend_assests/hfLogo_1920x1080.svg');
 }
 
+.container {
+  text-align: center;
+  padding: 2rem;
+}
+
+#question {
+  font-size: 1.5rem; /* Adjust font size as needed */
+  margin-bottom: 1rem; /* Adjust margin as needed */
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.options {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+button:hover {
+  background-color: #eee;
+}
