@@ -44,8 +44,40 @@
 </head>
 <body>
   <div class="container">
-    <img src="../heyfriend_assests/hfLogo_1920x1080.svg" alt="App Logo" class="logo">
+    <img src="../heyfriend_assests/hfLogo_1920x1080.svg" alt="App Logo" class="logo" id="logo">
   </div>
+	  <script>
+		const logo = document.getElementById('logo');
+
+		window.onload = function() {
+		  fadeIn(logo, 500); // Fade in with duration of 2 seconds (adjust as needed)
+		};
+
+		function fadeIn(element, duration) {
+		  let opacity = 0;
+		  let intervalId = setInterval(function() {
+			opacity += 0.05; // Adjust increment for smoother transition
+			element.style.opacity = opacity;
+
+			if (opacity >= 1) {
+			  clearInterval(intervalId);
+			  fadeOut(element, 2000); // Fade out after 3 seconds (adjust as needed)
+			}
+		  }, 200); // Adjust interval for animation speed (lower for faster)
+		}
+
+		function fadeOut(element, duration) {
+		  let opacity = 1;
+		  let intervalId = setInterval(function() {
+			opacity -= 0.05; // Adjust decrement for smoother transition
+			element.style.opacity = opacity;
+
+			if (opacity <= 0) {
+			  clearInterval(intervalId);
+			}
+		  }, 200); // Adjust interval for animation speed (lower for faster)
+		}
+	  </script>
   <footer class="footer">
     &copy; 2024 Ashlee Littleford & Darcy Pullman
   </footer>
