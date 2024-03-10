@@ -1,6 +1,20 @@
 @charset "utf-8";
 /* CSS Document */
 
+@font-face {
+	font-family: 'Optima';
+	src: url('https://fonts.cdnfonts.com/css/optima');	
+}
+
+@font-face {
+	font-family: 'Bukhari Script';
+	src: url('https://fonts.cdnfonts.com/css/bukhari-script');	
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url(https://fonts.googleapis.com/css2?family=Open+Sans);	
+}
 /* Global Styles */
 body {
   font-family: 'Optima', sans-serif; /* Choose a default font */
@@ -17,6 +31,7 @@ body {
 
 /* Basic element styles (optional) */
 h1, h2, h3 {
+  font-family: 'Optima', sans-serif; /* Choose a default font */
   margin: 1rem 0; /* Add some margin for headings */
 }
 
@@ -75,6 +90,7 @@ a:hover {
 }
 
 #question {
+  font-family: 'Optima'; /* Choose a default font */
   font-size: 1.5rem; /* Adjust font size as needed */
   margin-bottom: 1rem; /* Adjust margin as needed */
   opacity: 0;
@@ -88,9 +104,9 @@ a:hover {
 
 .options {
   display: flex;
-
   vertical-align: middle;
   justify-content: space-around;
+  font-family: 'Optima', sans-serif; /* Choose a default font */
 }
 
 button {
