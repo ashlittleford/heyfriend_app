@@ -54,6 +54,7 @@ a:hover {
 @media (min-width: 768px) {
   /* Styles for tablets and larger screens */
   body {
+	font-family: 'Optima', sans-serif; /* Choose a default font */
     font-size: 16px; /* Increase font size for better readability */
   }
 
@@ -92,6 +93,7 @@ a:hover {
 #question {
   font-family: 'Optima'; /* Choose a default font */
   font-size: 1.5rem; /* Adjust font size as needed */
+  color: #2B2A29;
   margin-bottom: 1rem; /* Adjust margin as needed */
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
@@ -110,6 +112,7 @@ a:hover {
 }
 
 button {
+  font-family: 'Optima'; /* Choose a default font */
   padding: 0.5rem 1rem;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -118,5 +121,6 @@ button {
 }
 
 button:hover {
+  font-family: 'Optima'; /* Choose a default font */
   background-color: #eee;
 }
