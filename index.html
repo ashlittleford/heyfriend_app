@@ -20,7 +20,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-    }
+	  animation: fadeInOut 6s ease-in-out forwards;  /* Adjust duration as needed */
+		}
 
     .logo {
       width: 400px; /* Adjust width as needed */
@@ -29,6 +30,7 @@
 
     .footer {
       text-align: center;
+	  font-family: 'Optima';
       padding: 1rem;
       font-size: 0.8rem; /* Adjust font size as needed */
       color: #aaa;
@@ -40,56 +42,64 @@
         height: 400px;
       }
     }
+	 
+	@keyframes fadeIn {
+	  from {opacity: 0;}
+	  to {opacity: 1;}
+	}
+	  
+	@keyframes fadeOut {
+	  from {opacity: 1;}
+	  to {opacity: 0;}
+	}
+	  
+	@keyframes loop {
+	  /* Here's the loop logic */
+	  from { opacity: 0; }
+	  to { opacity: 0; }
+	  }
+	  
+	@keyframes pause {
+	  from { opacity: 1; }
+	  to { opacity: 1; }  /* Stays at 100% opacity throughout the pause */
+	}
+	    
+	  
+	@keyframes fadeInOut {
+	  from { opacity: 0; }
+	  /* Fade-in animation (25% of total duration) */
+	  25% { animation: fadeIn 2s ease-in-out; }
+
+	  /* Pause for 1 second (33.33% of total duration) */
+	  50% { opacity: 1; }  /* Maintain opacity at 1 during pause */
+
+	  /* Fade-out animation (25% of total duration) */
+	  75% { animation: fadeOut 2s ease-in-out; }
+
+	  /* Reset to 0 opacity for looping (75% of total duration) */
+	  to { opacity: 0; }
+	}
+	  
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="heyfriend_assests/hfLogo_1920x1080.svg" alt="App Logo" class="logo" id="logo">
+    
+	  <img src="heyfriend_assests/hfLogo_1920x1080.svg" alt="App Logo" class="logo" id="logo">
   </div>
-	  <script>
-		const logo = document.getElementById('logo');
 
-		window.onload = function() {
-		  fadeIn(logo, 2000); // Fade in with duration of 2 seconds (adjust as needed)
-		};
-
-		function fadeIn(element, duration) {
-		  let opacity = 0;
-		  let intervalId = setInterval(function() {
-			opacity += 0.05; // Adjust increment for smoother transition
-			element.style.opacity = opacity;
-
-			if (opacity >= 1) {
-			  clearInterval(intervalId);
-			  fadeOut(element, 2000); // Fade out after 3 seconds (adjust as needed)
-			}
-		  }, 200); // Adjust interval for animation speed (lower for faster)
-		}
-
-	//	function fadeOut(element, duration) {
-	//	  let opacity = 1;
-	//	  let intervalId = setInterval(function() {
-	//		opacity -= 0.05; // Adjust decrement for smoother transition
-	//		element.style.opacity = opacity;
-//
-	//		if (opacity <= 0) {
-		//	  clearInterval(intervalId);
-			//}
-		//  }, 200); // Adjust interval for animation speed (lower for faster)
-	//	}
-	  </script>
 	
-	  <script> // redirects to questions
+	  <script> // redirects to welcome
     		window.onload = function() {
       			setTimeout(function() {
-        		window.location.href = "example1/questions.html";
+        		window.location.href = "example1/welcome.html";
       				}, 6000); // Redirect after 2 seconds (adjust as needed)
     			};
  			</script>
 	
 	
-  <footer class="footer" font-family: 'Optima'>
-    &copy; 2024 Ashlee Littleford & Darcy Pullman
+  <footer class="footer">
+    &copy; 2024 Ashlee Littleford and Darcy Pullman
   </footer>
 </body>
 </html>

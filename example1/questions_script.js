@@ -1,22 +1,26 @@
+// question screen
+
 const questionEl = document.getElementById('question');
 const optionsEl = document.querySelector('.options');
 const questions = [
   {
     question: "What is the capital of France?",
-    options: ["a) London", "b) Paris", "c) Berlin"],
+    options: ["a) London", "b) Paris", "c) Berlin", "d) Not Sure"],
     next: {
       "a": 1, // Index of next question if "a" is chosen
       "b": 2, // Index of next question if "b" is chosen
-      "c": 1 // Index of next question if "c" is chosen (wrong answer leads back to Q1)
+      "c": 1, // Index of next question if "c" is chosen (wrong answer leads back to Q1)
+	  "d": 1 // Index of next question if "d" is chosen
     }
   },
   {
     question: "What is the tallest mountain in the world?",
-    options: ["a) Mount Everest", "b) K2", "c) Mount Kilimanjaro"],
+    options: ["a) Mount Everest", "b) K2", "c) Mount Kilimanjaro, d) Not Sure"],
     next: {
       "a": "win", // End quiz with win message if "a" is chosen
       "b": 1, // Show question 1 again if "b" is chosen (wrong)
-      "c": 1 // Show question 1 again if "c" is chosen (wrong)
+      "c": 1, // Show question 1 again if "c" is chosen (wrong)
+	  "d": 1 // Index of next question if "d" is chosen
     }
   }
 ];
@@ -32,7 +36,7 @@ function showQuestion() {
   question.options.forEach(option => {
     const button = document.createElement('button');
     button.textContent = option;
-    button.dataset.answer = option.slice(2, 3); // Extract answer (a, b, or c)
+    button.dataset.answer = option.slice(2, 4); // Extract answer (a, b, or c)
     button.addEventListener('click', handleAnswer);
     optionsEl.appendChild(button);
   });
@@ -53,3 +57,5 @@ function handleAnswer(event) {
 }
 
 showQuestion(); // Start the quiz
+
+
