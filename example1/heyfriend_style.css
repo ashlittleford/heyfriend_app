@@ -96,13 +96,19 @@ a:hover {
 
 }
 
+.text {
+	opacity: 0;
+    animation: fadeInOut 2s ease-in-out forwards;
+
+}
+
 #question {
   font-family: 'Optima'; /* Choose a default font */
   font-size: 1.5rem; /* Adjust font size as needed */
   color: #2B2A29;
   margin-bottom: 1rem; /* Adjust margin as needed */
   opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
+  animation: fadeIn 6s ease-in-out forwards;
 }
 
 
@@ -125,17 +131,6 @@ button {
 button:hover {
   font-family: 'Optima'; /* Choose a default font */
   background-color: #eee;
-}
-
-
-
-#welcome-container {
-  text-align: center;
-  font-family: 'Optima'; /* Choose a default font */
-  font-size: 1.5rem; /* Adjust font size as needed */
-  color: #2B2A29;
-  opacity: 0;
-  animation: fadeInOut 6s ease-in-out forwards; /* forwards ensures opacity */
 }
 
 

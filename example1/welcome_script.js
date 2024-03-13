@@ -1,31 +1,32 @@
-// welcome screen
-const welcomeContainer = document.getElementById('welcome-container');
-const welcomes = [
-  "Hey Friend, we are so glad you are here.",
-  "We are going to ask you are series of questions to find the best tool for you.",
-  "We hope you find something useful today."
-];
+	const textElements = document.querySelector('.text'); // Select the paragraph
+    const textLines = [  // Array of your text lines
+		"Hey Friend, we are so glad you are here.",
+  		"We are going to ask you are series of questions to find the best tool for you.",
+		"We hope you find something useful today."
+    ];
+let currentTextIndex = 0;
 
-let currentWelcome = 0;
+    function fadeInNextText() {
+      if (currentTextIndex >= textLines.length) {
+        // All text displayed, load next page
+        window.location.href = "questions.html";  // Replace with your actual URL
+        return;
+      }
 
-function showWelcome() {
-  // const welcome = welcomes[currentWelcome];
-  welcomeContainer.welcomeContent = welcomes[currentWelcome];
-  // welcomeContainer.welcomeContent = welcome.welcome;
-  welcomeContainer.style.opacity = 1; // Reset opacity for fadeIn animation
+      // Update text content before animation
+      textElements.textContent = textLines[currentTextIndex];
 
-   currentWelcome++;
-  if (currentWelcome >= welcomes.length) {
-    // currentText = 0; // Start over after displaying all texts // change this to -- go to questions
-      			setTimeout(function() {
-        		window.location.href = "/questions.html";
-      				}, 2000); // Redirect after 2 seconds (adjust as needed)
-  }
+      // Add animation class
+      textElements.classList.add('text');
 
-  setTimeout(function() {
-    welcomeContainer.style.opacity = 0; // Fade out after a delay
-    setTimeout(showWelcome, 5000); // Show next text after 1 second fade-out
-  }, 5000); // Delay before fade-out (adjust as needed)
-}
+      /* Ensure complete fade-out before proceeding (using requestAnimationFrame) */
+      textElements.addEventListener('transitionend', () => {
+        textElements.classList.remove('text');
+        window.requestAnimationFrame(() => {
+          currentTextIndex++;
+          fadeInNextText();
+        });
+      });
+    }
 
-showWelcome(); // Call the function to start the text display// JavaScript Document
+    fadeInNextText();
