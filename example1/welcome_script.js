@@ -1,30 +1,37 @@
-	const textElements = document.querySelector('.text'); // Select the paragraph
-    const textLines = [  // Array of your text lines
-		"Hey Friend, we are so glad you are here.\n We are going to ask you are series of questions to find the best tool for you.\n We hope you find something useful today."
-    ];
-    let currentTextIndex = 0;
+const text = [
+  "Hey Friend, we are so glad you are here.",
+  "We are going to ask you a series of questions to find the best tool for you.",
+  "We hope you find something useful today."
+];
 
-    function fadeInNextText() {
-      if (currentTextIndex >= textLines.length) {
-        // All text displayed, load next page
-        window.location.href = "your_other_page.html";  // Replace with your actual URL
-        return;
-      }
 
-      // Update text content before animation
-      textElements.textContent = textLines[currentTextIndex];
+let currentTextIndex = 0;
 
-      // Add animation class
-      textElements.classList.add('text');
 
-      // Ensure complete fade-out using requestAnimationFrame
-      textElements.addEventListener('transitionend', () => {
-        textElements.classList.remove('text');
-        window.requestAnimationFrame(() => {
-          currentTextIndex++;
-          fadeInNextText();
-        });
-      });
+
+function displayText() {
+  const textElement = document.getElementById("text");
+  const textLine = textElement.querySelector(".text-line"); // Select the child element
+
+  // Update text content
+  textLine.textContent = text[currentTextIndex];
+
+
+  setTimeout(() => {
+
+    currentTextIndex++;
+
+    // Check if last sentence
+    if (currentTextIndex === text.length) {
+      // Redirect to another page after displaying all texts
+      window.location.href = "questions.html";  // Replace with your actual URL
+      return;
     }
 
-    fadeInNextText();
+    // Call the function again for the next text
+    displayText();
+  }, 6000); // Adjust time in milliseconds (6 seconds)
+}
+
+// Call the function to start displaying text
+displayText();
