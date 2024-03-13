@@ -3,7 +3,7 @@
 
 @font-face {
 	font-family: 'Optima';
-	src: url('../heyfriend_assests/optima/OPTIMA.woff') format("woff");	
+	src: url('../heyfriend_assests/optima/OPTIMA.woff');	
 }
 
 @font-face {
@@ -96,11 +96,21 @@ a:hover {
 
 }
 
-.text {
+.text-line-other2 {
 	opacity: 0;
     animation: fadeInOut 6s ease-in-out;
-	animation-fill-mode: forwards;
+}
 
+.text-line-other {
+
+}
+
+.text-line {
+	animation: fadeInOut 6s ease-in-out;
+}
+
+#text {
+	
 }
 
 #question {
@@ -109,7 +119,7 @@ a:hover {
   color: #2B2A29;
   margin-bottom: 1rem; /* Adjust margin as needed */
   opacity: 0;
-  animation: fadeIn 10s ease-in-out forwards;
+  animation: fadeIn 4s ease-in-out forwards;
 }
 
 
@@ -127,11 +137,14 @@ button {
   border-radius: 4px;
   cursor: pointer;
   background-color: #fff;
+  opacity: 0;
+  animation: fadeIn 4s ease-in-out forwards;
 }
 
 button:hover {
   font-family: 'Optima'; /* Choose a default font */
   background-color: #eee;
+
 }
 
 
@@ -157,12 +170,7 @@ button:hover {
 	  from { opacity: 1; }
 	  to { opacity: 1; }  /* Stays at 100% opacity throughout the pause */
 	}
-
-    @keyframes fadeInOut {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-	    
+    
 	  /* 2/3 pause in the middle */
 	@keyframes fadeInOut {
 	  from { opacity: 0; }
@@ -177,4 +185,4 @@ button:hover {
 
 	  /* Reset to 0 opacity for looping (75% of total duration) */
 	  to { opacity: 0; }
-	} // JavaScript Document
+		}
