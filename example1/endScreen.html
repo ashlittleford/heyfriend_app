@@ -3,24 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hey Friend&copy;, how can we help?</title>
+  <title>Hey Friend&copy;, see you soon...</title>
   <style>
     body {
       font-family: 'Optima', sans-serif;
       margin: 0;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+	  flex: 1;
+	  flex-direction: column;
+      justify-content: space-around;
       min-height: 100vh;
-      background-color: #f5f5f5; /* Light gray background */
+      background-color: #f5f5f5;
+	  font-size: 1.5rem;/* Light gray background */
     }
 
-    .container {
+	.container {
       flex: 1; /* Take up all remaining space */
       display: flex;
       align-items: center;
-      justify-content: center;
-	  animation: fadeInOut 10s ease-in-out forwards;  /* Adjust duration as needed */
+      justify-content: space-around;
+	  text-align: center;
+
+}
+	   	  
+    .middlebox {
+      flex: 0; /* Take up all remaining space */
+      text-align: center;
+	  display: flex;
+	  align-items: middle;
+	  justify-content: space-around;
+	  flex-direction: column;
+	  animation: fadeIn 10s ease-in-out forwards;  /* Adjust duration as needed */
 		}
 
     .logo {
@@ -42,6 +55,10 @@
         height: 400px;
       }
     }
+	  
+.stacked-span {
+
+}
 	 
 	@keyframes fadeIn {
 	  from {opacity: 0;}
@@ -63,7 +80,6 @@
 	  from { opacity: 1; }
 	  to { opacity: 1; }  /* Stays at 100% opacity throughout the pause */
 	}
-	    
 	  
 	@keyframes fadeInOut {
 	  from { opacity: 0; }
@@ -84,20 +100,12 @@
 </head>
 <body>
   <div class="container">
-    
-	  <img src="heyfriend_assests/hfLogo_1920x1080.svg" alt="App Logo" class="logo" id="logo">
+	  <div class="middlebox">
+		  <span><img src="../heyfriend_assests/hfLogo_1920x1080.svg" alt="App Logo" class="logo" id="logo"></span>
+		  <span>Coming Soon...</span>
+		  </div>
   </div>
 
-	
-	  <script> // redirects to welcome
-    		window.onload = function() {
-      			setTimeout(function() {
-        		window.location.href = "example1/welcome.html";
-      				}, 10000); // Redirect after 2 seconds (adjust as needed)
-    			};
- 			</script>
-	
-	
   <footer class="footer">
     &copy; 2024 Ashlee Littleford and Darcy Pullman
   </footer>

@@ -93,6 +93,7 @@ a:hover {
   justify-content: space-around;
   flex-direction: column;
   padding: 2rem;
+  font-size: 1.5rem;
 
 }
 
@@ -106,6 +107,7 @@ a:hover {
 }
 
 .text-line {
+	transition: opacity 6s;
 	animation: fadeInOut 6s ease-in-out;
 }
 
