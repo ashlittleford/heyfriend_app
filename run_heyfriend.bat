@@ -14,7 +14,6 @@ if %errorlevel% neq 0 (
 
 echo Navigating to heyfriend-app directory...
 cd heyfriend-app
-
 if %errorlevel% neq 0 (
     echo Directory 'heyfriend-app' not found!
     pause
@@ -23,14 +22,30 @@ if %errorlevel% neq 0 (
 
 echo Installing dependencies...
 call npm install
-
 if %errorlevel% neq 0 (
-    echo Failed to install dependencies.
-    pause
-    exit /b
+    echo.
+    echo ==========================================
+    echo npm install failed. Attempting to fix...
+    echo Cleaning npm cache and removing node_modules...
+    echo ==========================================
+    call npm cache clean --force
+    if exist node_modules rmdir /s /q node_modules
+    if exist package-lock.json del package-lock.json
+
+    echo Retrying npm install...
+    call npm install
+    if %errorlevel% neq 0 (
+        echo.
+        echo ==========================================
+        echo Failed to install dependencies even after cleanup.
+        echo Please check your internet connection or permissions.
+        echo You might need to run this script as Administrator.
+        echo ==========================================
+        pause
+        exit /b
+    )
 )
 
 echo Starting development server...
 call npm run dev
-
 pause
