@@ -20,36 +20,13 @@ This repository contains:
 
 ### Running with Batch Scripts (Windows)
 
-For Windows users, you can use the provided batch scripts in the root directory:
+For Windows users, you can use the provided batch script in the root directory:
 
 -   Double-click `run_heyfriend.bat` to start **heyfriend-app**.
--   Double-click `run_uca_formation.bat` to start **uca-formation-app**.
 
-These scripts will automatically install dependencies and start the development server.
+This script will automatically install dependencies and start the development server.
 
 ### Manual Setup
-
-#### Running uca-formation-app
-
-1.  Navigate to the directory:
-
-    ```bash
-    cd uca-formation-app
-    ```
-
-2.  Install dependencies:
-
-    ```bash
-    npm install
-    ```
-
-3.  Start the development server:
-
-    ```bash
-    npm run dev
-    ```
-
-4.  Open your browser and navigate to the URL shown in the terminal (usually `http://localhost:5173`).
 
 #### Running heyfriend-app
 
