@@ -21,16 +21,23 @@ if %errorlevel% neq 0 (
     exit /b
 )
 
-echo Installing dependencies...
-call npm install
+echo.
+echo Starting local server...
+echo The app will open in your default browser at http://localhost:3000
+echo.
+echo DO NOT CLOSE THIS WINDOW while using the app.
+echo.
 
-if %errorlevel% neq 0 (
-    echo Failed to install dependencies.
-    pause
-    exit /b
-)
+REM Start the server in the background (new window) or same window?
+REM Start node server.js and then open browser.
+REM Using 'start' to run node in a separate window so we can continue script execution
+start "HeyFriend Server" node server.js
 
-echo Starting development server...
-call npm run dev
+REM Wait a moment for server to start
+timeout /t 2 >nul
 
+REM Open browser
+start http://localhost:3000
+
+echo App is running. Close the server window to stop.
 pause
