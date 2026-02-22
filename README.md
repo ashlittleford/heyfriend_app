@@ -1,9 +1,8 @@
 # Project Repository
 
-This repository contains two React applications:
+This repository contains:
 
-1.  **uca-formation-app**: A formation application for UCA.
-2.  **heyfriend-app**: A mental health assessment and support application.
+1.  **heyfriend-app**: A mental health assessment and support application.
 
 ## Prerequisites
 
