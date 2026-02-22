@@ -1,6 +1,8 @@
 # Project Repository
 
-This repository contains the **heyfriend-app**, a mental health assessment and support application.
+This repository contains:
+
+1.  **heyfriend-app**: A mental health assessment and support application.
 
 ## Prerequisites
 
