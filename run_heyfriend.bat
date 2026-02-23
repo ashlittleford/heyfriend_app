@@ -14,7 +14,6 @@ if %errorlevel% neq 0 (
 
 echo Navigating to heyfriend-app directory...
 cd heyfriend-app
-
 if %errorlevel% neq 0 (
     echo Directory 'heyfriend-app' not found!
     pause
